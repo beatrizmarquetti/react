@@ -19,7 +19,7 @@ const TarefasItem = ({ tarefa, onEditTarefa, onDeleteTarefa }) => {
     return (
         <li>
             {isEditing ? (
-                <input 
+                <input
                 type="text"
                 value={tarefa.novoTexto}
                 onChange={(e) => {setNovoTexto(e.target.value )}}/>
