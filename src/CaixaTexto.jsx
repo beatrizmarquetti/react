@@ -1,20 +1,23 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const CaixaTexto = () =>{
+const CaixaTexto = () => {
+  const [texto, setTexto] = useState("");
 
-    const [texto, setTexto] = useState('');
-    const gerenciarTexto = (event)=>{
-        setTexto(event.target.value)
+  const gerenciarTexto = (event) => {
+    setTexto(event.target.value)
+  }
 
-    }
+  return (
+    <div>
+      <h3>Input</h3>
+      <input
+        type="text"
+        value={texto}
+        onInput={gerenciarTexto}
+      />
+      <p>Você digitou: {texto}</p>
+    </div>
+  );
+};
 
-    return(
-        <div>
-            <h3> <input type="text" value={texto} onInput={gerenciarTexto}/></h3>
-            <p>Você digitou:{texto}</p>
-        </div>
-    )
-
-}
-
-export default CaixaTexto
+export default CaixaTexto;
